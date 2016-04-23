@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = "Plist"
   s.version          = "0.1.0"
-  s.summary          = "A short description of Plist."
+  s.summary          = "A Swift framework to make working with plists easy."
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -20,12 +20,12 @@ Pod::Spec.new do |s|
   s.description      = <<-DESC
                        DESC
 
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/Plist"
+  s.homepage         = "https://github.com/BenziAhamed/Plist"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
-  s.author           = { "Benzi" => "to.benzi@gmail.com" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/Plist.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.author           = { "Benzi Ahamed" => "to.benzi@gmail.com" }
+  s.source           = { :git => "https://github.com/BenziAhamed/Plist.git", :tag => s.version.to_s }
+  # s.social_media_url = 'https://twitter.com/BenziAhamed'
 
   s.ios.deployment_target = '8.0'
 

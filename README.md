@@ -1,6 +1,6 @@
 # Plist
 
-[![CI Status](http://img.shields.io/travis/Benzi/Plist.svg?style=flat)](https://travis-ci.org/Benzi/Plist)
+[![CI Status](http://img.shields.io/travis/BenziAhamed/Plist.svg?style=flat)](https://travis-ci.org/BenziAhamed/Plist)
 [![Version](https://img.shields.io/cocoapods/v/Plist.svg?style=flat)](http://cocoapods.org/pods/Plist)
 [![License](https://img.shields.io/cocoapods/l/Plist.svg?style=flat)](http://cocoapods.org/pods/Plist)
 [![Platform](https://img.shields.io/cocoapods/p/Plist.svg?style=flat)](http://cocoapods.org/pods/Plist)
@@ -22,7 +22,7 @@ pod "Plist"
 
 ## Author
 
-Benzi, to.benzi@gmail.com
+Benzi Ahamed, to.benzi@gmail.com
 
 ## License
 
