@@ -29,7 +29,7 @@ It has an API inspired by SwiftyJSON library.
   s.source           = { :git => "https://github.com/BenziAhamed/Plist.git", :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/BenziAhamed'
 
-  s.ios.deployment_target = '7.0'
+  s.ios.deployment_target = '8.0'
 
   s.source_files = 'Plist/Classes/**/*'
   s.resource_bundles = {
