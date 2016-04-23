@@ -18,6 +18,8 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
+Plist is a Swift library designed to make it easier to work the .plist files in Swift.
+It has an API inspired by SwiftyJSON library.
                        DESC
 
   s.homepage         = "https://github.com/BenziAhamed/Plist"
