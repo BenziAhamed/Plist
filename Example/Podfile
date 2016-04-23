@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'Plist_Example', :exclusive => true do
+  pod 'Plist', :path => '../'
+end
+
+target 'Plist_Tests', :exclusive => true do
+  pod 'Plist', :path => '../'
+
+  
+end
