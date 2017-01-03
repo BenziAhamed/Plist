@@ -27,10 +27,23 @@
 
 import Foundation
 
+class NSDictionarySubscriptAnyObject: NSDictionary {
+    override init() {
+        super.init()
+    }
+}
 
-public enum Plist {
+extension NSDictionarySubscriptAnyObject {
+    @objc public subscript(key: Any) -> AnyObject? {
+        get {
+            return self[key] as AnyObject?
+        }
+    }
+}
 
-    case dictionary(NSDictionary)
+enum Plist {
+
+    case dictionary(NSDictionarySubscriptAnyObject)
     case Array(NSArray)
     case Value(AnyObject)
     case none
@@ -55,7 +68,7 @@ public enum Plist {
 extension Plist {
 
     public init(path: String) {
-        if let dict = NSDictionary(contentsOfFile: path) {
+        if let dict = NSDictionarySubscriptAnyObject(contentsOfFile: path) {
             self = .dictionary(dict)
         } else if let array = NSArray(contentsOfFile: path) {
             self = .Array(array)
@@ -74,7 +87,7 @@ extension Plist {
     /// wraps a given object to a Plist
     fileprivate static func wrap(_ object: Any?) -> Plist {
 
-        if let dict = object as? NSDictionary {
+        if let dict = object as? NSDictionarySubscriptAnyObject {
             return .dictionary(dict)
         }
         if let array = object as? NSArray {
@@ -169,7 +182,7 @@ extension Plist {
     }
 
     // returns the underlying dictionary
-    public var dict: NSDictionary? {
+    public var dict: NSDictionarySubscriptAnyObject? {
         switch self {
         case let .dictionary(dict):
             return dict
