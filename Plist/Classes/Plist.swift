@@ -32,7 +32,7 @@ public enum Plist {
     
     case dictionary(NSDictionary)
     case Array(NSArray)
-    case Value(Any)
+    case Value(AnyObject)
     case none
     
     public init(_ dict: NSDictionary) {
@@ -43,7 +43,7 @@ public enum Plist {
         self = .Array(array)
     }
     
-    public init(_ value: Any?) {
+    public init(_ value: AnyObject?) {
         self = Plist.wrap(value)
     }
     
@@ -83,7 +83,7 @@ extension Plist {
             return .Array(array)
         }
         if let value = object {
-            return .Value(value)
+            return .Value(value as AnyObject)
         }
         return .none
     }
