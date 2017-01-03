@@ -175,7 +175,7 @@ extension Plist {
     public var dict: NSDictionary? {
         switch self {
         case let .dictionary(dict):
-            return dict as NSDictionary<AnyObject, AnyObject>
+            return dict
         default:
             return nil
         }
