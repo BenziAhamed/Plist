@@ -27,48 +27,35 @@
 
 import Foundation
 
-class NSDictionarySubscriptAnyObject: NSDictionary {
-    override init() {
-        super.init()
-    }
-}
 
-extension NSDictionarySubscriptAnyObject {
-    @objc public subscript(key: Any) -> AnyObject? {
-        get {
-            return self[key] as AnyObject?
-        }
-    }
-}
-
-enum Plist {
-
-    case dictionary(NSDictionarySubscriptAnyObject)
+public enum Plist {
+    
+    case dictionary(NSDictionary)
     case Array(NSArray)
     case Value(AnyObject)
     case none
-
+    
     public init(_ dict: NSDictionary) {
         self = .dictionary(dict)
     }
-
+    
     public init(_ array: NSArray) {
         self = .Array(array)
     }
-
+    
     public init(_ value: AnyObject?) {
         self = Plist.wrap(value)
     }
-
+    
 }
 
 
 // MARK:- initialize from a path
 
 extension Plist {
-
+    
     public init(path: String) {
-        if let dict = NSDictionarySubscriptAnyObject(contentsOfFile: path) {
+        if let dict = NSDictionary(contentsOfFile: path) {
             self = .dictionary(dict)
         } else if let array = NSArray(contentsOfFile: path) {
             self = .Array(array)
@@ -76,18 +63,18 @@ extension Plist {
             self = .none
         }
     }
-
+    
 }
 
 
 // MARK:- private helpers
 
 extension Plist {
-
+    
     /// wraps a given object to a Plist
     fileprivate static func wrap(_ object: Any?) -> Plist {
-
-        if let dict = object as? NSDictionarySubscriptAnyObject {
+        
+        if let dict = object as? NSDictionary {
             return .dictionary(dict)
         }
         if let array = object as? NSArray {
@@ -98,7 +85,7 @@ extension Plist {
         }
         return .none
     }
-
+    
     /// tries to cast to an optional T
     fileprivate func cast<T>() -> T? {
         switch self {
@@ -113,20 +100,20 @@ extension Plist {
 // MARK:- subscripting
 
 extension Plist {
-
+    
     /// index a dictionary
     public subscript(key: String) -> Plist {
         switch self {
-
+            
         case let .dictionary(dict):
             let v = dict.object(forKey: key)
             return Plist.wrap(v)
-
+            
         default:
             return .none
         }
     }
-
+    
     /// index an array
     public subscript(index: Int) -> Plist {
         switch self {
@@ -135,12 +122,12 @@ extension Plist {
                 return Plist.wrap(array[index])
             }
             return .none
-
+            
         default:
             return .none
         }
     }
-
+    
 }
 
 
@@ -155,8 +142,8 @@ extension Plist {
     public var data: Data? { return cast() }
     public var number: NSNumber? { return cast() }
     public var bool: Bool? { return cast() }
-
-
+    
+    
     // unwraps and returns the underlying value
     public var value: Any? {
         switch self {
@@ -170,7 +157,7 @@ extension Plist {
             return nil
         }
     }
-
+    
     // returns the underlying array
     public var array: NSArray? {
         switch self {
@@ -180,9 +167,9 @@ extension Plist {
             return nil
         }
     }
-
+    
     // returns the underlying dictionary
-    public var dict: NSDictionarySubscriptAnyObject? {
+    public var dict: NSDictionary? {
         switch self {
         case let .dictionary(dict):
             return dict
@@ -190,7 +177,7 @@ extension Plist {
             return nil
         }
     }
-
+    
 }
 
 
