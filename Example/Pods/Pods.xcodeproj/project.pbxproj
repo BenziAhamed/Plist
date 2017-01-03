@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		01A65509DD7196966071492851ACF996 /* Pods-Plist_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 49B66C24BC9002EBF516680A9DF5641C /* Pods-Plist_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0B2856FF20DB04766F1C6769289C94C8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		24D470C21E1B28DA007BDE39 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
 		2BF8DE17AD90B5FDE72E9FAE5F387D65 /* Plist.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 463FBB7DA33158C7751A4DBA3B00A58A /* Plist.bundle */; };
 		312DBC64401508FA95E1920635FB20F8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
 		4B5CB085A746EC0E702CC8F626D3A7FF /* Pods-Plist_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E7C331355E1CF016B46A68163CE5CA1D /* Pods-Plist_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -83,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24D470C21E1B28DA007BDE39 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +356,9 @@
 				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				TargetAttributes = {
+					59BF5A72A5E64E2D2665F9A2C7656D56 = {
+						LastSwiftMigration = 0820;
+					};
 					63A51F58FD4C9EED01DB4B42D589EDEC = {
 						LastSwiftMigration = 0820;
 					};
@@ -496,6 +501,7 @@
 				PRODUCT_NAME = Plist;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
@@ -508,6 +514,7 @@
 				PRODUCT_NAME = Plist;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Debug;
