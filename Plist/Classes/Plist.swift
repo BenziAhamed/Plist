@@ -30,20 +30,20 @@ import Foundation
 
 public enum Plist {
     
-    case Dictionary(NSDictionary)
+    case dictionary(NSDictionary)
     case Array(NSArray)
-    case Value(Any)
-    case None
+    case Value(AnyObject)
+    case none
     
     public init(_ dict: NSDictionary) {
-        self = .Dictionary(dict)
+        self = .dictionary(dict)
     }
     
     public init(_ array: NSArray) {
         self = .Array(array)
     }
     
-    public init(_ value: Any?) {
+    public init(_ value: AnyObject?) {
         self = Plist.wrap(value)
     }
     
@@ -56,13 +56,11 @@ extension Plist {
     
     public init(path: String) {
         if let dict = NSDictionary(contentsOfFile: path) {
-            self = .Dictionary(dict)
-        }
-        else if let array = NSArray(contentsOfFile: path) {
+            self = .dictionary(dict)
+        } else if let array = NSArray(contentsOfFile: path) {
             self = .Array(array)
-        }
-        else {
-            self = .None
+        } else {
+            self = .none
         }
     }
     
@@ -74,22 +72,22 @@ extension Plist {
 extension Plist {
     
     /// wraps a given object to a Plist
-    private static func wrap(object: Any?) -> Plist {
+    fileprivate static func wrap(_ object: Any?) -> Plist {
         
         if let dict = object as? NSDictionary {
-            return .Dictionary(dict)
+            return .dictionary(dict)
         }
         if let array = object as? NSArray {
             return .Array(array)
         }
         if let value = object {
-            return .Value(value)
+            return .Value(value as AnyObject)
         }
-        return .None
+        return .none
     }
     
     /// tries to cast to an optional T
-    private func cast<T>() -> T? {
+    fileprivate func cast<T>() -> T? {
         switch self {
         case let .Value(value):
             return value as? T
@@ -107,26 +105,26 @@ extension Plist {
     public subscript(key: String) -> Plist {
         switch self {
             
-        case let Dictionary(dict):
-            let v = dict.objectForKey(key)
+        case let .dictionary(dict):
+            let v = dict.object(forKey: key)
             return Plist.wrap(v)
             
         default:
-            return .None
+            return .none
         }
     }
     
     /// index an array
     public subscript(index: Int) -> Plist {
         switch self {
-        case let Array(array):
+        case let .Array(array):
             if index >= 0 && index < array.count {
                 return Plist.wrap(array[index])
             }
-            return .None
+            return .none
             
         default:
-            return .None
+            return .none
         }
     }
     
@@ -136,15 +134,14 @@ extension Plist {
 // MARK:- Value extraction
 
 extension Plist {
-    
-    public var string: String?       { return cast() }
-    public var int: Int?             { return cast() }
-    public var double: Double?       { return cast() }
-    public var float: Float?         { return cast() }
-    public var date: NSDate?         { return cast() }
-    public var data: NSData?         { return cast() }
-    public var number: NSNumber?     { return cast() }
-    public var bool: Bool?           { return cast() }
+    public var string: String? { return cast() }
+    public var int: Int? { return cast() }
+    public var double: Double? { return cast() }
+    public var float: Float? { return cast() }
+    public var date: Date? { return cast() }
+    public var data: Data? { return cast() }
+    public var number: NSNumber? { return cast() }
+    public var bool: Bool? { return cast() }
     
     
     // unwraps and returns the underlying value
@@ -152,11 +149,11 @@ extension Plist {
         switch self {
         case let .Value(value):
             return value
-        case let .Dictionary(dict):
+        case let .dictionary(dict):
             return dict
         case let .Array(array):
             return array
-        case .None:
+        case .none:
             return nil
         }
     }
@@ -174,7 +171,7 @@ extension Plist {
     // returns the underlying dictionary
     public var dict: NSDictionary? {
         switch self {
-        case let .Dictionary(dict):
+        case let .dictionary(dict):
             return dict
         default:
             return nil
@@ -187,12 +184,12 @@ extension Plist {
 // MARK:- CustomStringConvertible
 
 extension Plist : CustomStringConvertible {
-    public var description:String {
+    public var description: String {
         switch self {
         case let .Array(array): return "(array \(array))"
-        case let .Dictionary(dict): return "(dict \(dict))"
+        case let .dictionary(dict): return "(dict \(dict))"
         case let .Value(value): return "(value \(value))"
-        case .None: return "(none)"
+        case .none: return "(none)"
         }
     }
 }

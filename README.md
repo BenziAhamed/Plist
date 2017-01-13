@@ -5,7 +5,11 @@
 [![License](https://img.shields.io/cocoapods/l/Plist.svg?style=flat)](http://cocoapods.org/pods/Plist)
 [![Platform](https://img.shields.io/cocoapods/p/Plist.svg?style=flat)](http://cocoapods.org/pods/Plist)
 
-A simple Swift library to work with plist files and data. Inspired by SwitfyJSON.
+A simple Swift library to work with plist files and data. Inspired by SwitfyJSON. 
+
+## Changes in this fork
+
+Updated to Swift 3.0. 
 
 ## Usage
 
