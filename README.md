@@ -9,7 +9,7 @@ A simple Swift library to work with plist files and data. Inspired by SwitfyJSON
 
 ## Changes in this fork
 
-Updated to Swift 3.0. NSDictionary in Swift 3 subscript does not return AnyObject, but instead return Any. Returned object must be casted to AnyObject before any more subscripting.
+Updated to Swift 3.0. 
 
 ## Usage
 
