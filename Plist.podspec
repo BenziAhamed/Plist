@@ -32,9 +32,9 @@ It has an API inspired by SwiftyJSON library.
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'Plist/Classes/**/*'
-  s.resource_bundles = {
-    'Plist' => ['Plist/Assets/*.png']
-  }
+  # s.resource_bundles = {
+  #   'Plist' => ['Plist/Assets/*.png']
+  # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
