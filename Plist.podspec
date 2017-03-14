@@ -16,5 +16,5 @@ It has an API inspired by SwiftyJSON library.
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'Common/**/*'
+  s.source_files = 'Common/*'
 end
