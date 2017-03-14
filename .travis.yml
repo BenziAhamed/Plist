@@ -1,0 +1,8 @@
+language: objective-c
+osx_image: xcode8
+script:
+  - set -o pipefail
+  - xcodebuild -version
+  - xcodebuild -showsdks
+  - instruments -s devices
+  - xcodebuild -workspace "Plist.xcworkspace" -scheme "Plist macOS" -sdk "macosx" -destination "arch=x86_64" -configuration Debug ONLY_ACTIVE_ARCH=NO ENABLE_TESTABILITY=YES test -verbose | xcpretty
