@@ -59,7 +59,7 @@ NOTE: To run the example project, clone the repo, and run `pod install` from the
 
 ## Requirements
 
-iOS 8+
+iOS 8+, Swift 3.0
 
 ## Installation
 
