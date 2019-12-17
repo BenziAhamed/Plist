@@ -28,6 +28,7 @@
 import Foundation
 
 
+@dynamicMemberLookup
 public enum Plist {
     
     case dictionary(NSDictionary)
@@ -195,4 +196,18 @@ extension Plist : CustomStringConvertible {
         case .none: return "(none)"
         }
     }
+}
+
+
+// MARK:- Dynamic Member Lookup
+
+extension Plist {
+    
+    public subscript(dynamicMember member: String) -> Plist {
+        if let index = Int(member) {
+            return self[index]
+        }
+        return self[member]
+    }
+
 }

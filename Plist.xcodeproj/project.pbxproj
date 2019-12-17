@@ -282,6 +282,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = B9EFB8E71E7835DF003F8BAC;
@@ -393,7 +394,7 @@
 				PRODUCT_MODULE_NAME = Plist;
 				PRODUCT_NAME = Plist;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Common";
 			};
 			name = Debug;
@@ -414,7 +415,7 @@
 				PRODUCT_MODULE_NAME = Plist;
 				PRODUCT_NAME = Plist;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Common";
 			};
 			name = Release;
@@ -427,7 +428,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.folded-paper.Plist-iOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -439,7 +440,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.folded-paper.Plist-iOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -461,7 +462,7 @@
 				PRODUCT_NAME = Plist;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -483,7 +484,7 @@
 				PRODUCT_NAME = Plist;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -499,7 +500,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.folded-paper.Plist-macOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -515,7 +516,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.folded-paper.Plist-macOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -628,6 +629,7 @@
 				B93AEF1B1E7836DE00598D5C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B93AEF1C1E7836DE00598D5C /* Build configuration list for PBXNativeTarget "Plist iOS Tests" */ = {
 			isa = XCConfigurationList;
@@ -636,6 +638,7 @@
 				B93AEF1E1E7836DE00598D5C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B93AEF461E78399800598D5C /* Build configuration list for PBXNativeTarget "Plist macOS" */ = {
 			isa = XCConfigurationList;
@@ -644,6 +647,7 @@
 				B93AEF481E78399800598D5C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B93AEF491E78399800598D5C /* Build configuration list for PBXNativeTarget "Plist macOS Tests" */ = {
 			isa = XCConfigurationList;
@@ -652,6 +656,7 @@
 				B93AEF4B1E78399800598D5C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B9EFB8EB1E7835DF003F8BAC /* Build configuration list for PBXProject "Plist" */ = {
 			isa = XCConfigurationList;

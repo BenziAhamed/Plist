@@ -7,29 +7,29 @@
 //
 
 import XCTest
+import Plist
 
 class PlistTests: XCTestCase {
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func testCreateArrayWorks() {
+        let p = Plist([1,2,3,4,5])
+        XCTAssertEqual(p.0.int, 1)
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
+    func testCreateArrayWorks2() {
+        let p = Plist([1,2,3,4,5])
+        XCTAssertEqual(p[0].int, 1)
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testCreateDictWorks() {
+        let p = Plist(["name": "Plist", "status": "deployed"])
+        XCTAssertEqual(p.name.string, "Plist")
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testCreateDictWorks2() {
+        let p = Plist(["name": "Plist", "status": "deployed"])
+        XCTAssertEqual(p["name"].string, "Plist")
     }
     
 }
+
