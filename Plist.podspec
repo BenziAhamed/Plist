@@ -15,6 +15,7 @@ It has an API inspired by SwiftyJSON library.
   s.social_media_url = 'https://twitter.com/BenziAhamed'
 
   s.ios.deployment_target = '8.0'
+  s.swift_version = '5.0'
 
   s.source_files = 'Common/*'
 end
